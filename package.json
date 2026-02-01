@@ -1,0 +1,17 @@
+{
+  "name": "online-store",
+  "private": true,
+  "description": "Online Store - NoSQL project (backend + frontend)",
+  "scripts": {
+    "dev": "concurrently -n backend,frontend -c blue,green \"npm run dev --prefix backend\" \"wait-on http://localhost:5000/api/health -t 30000 && npm run dev --prefix frontend\"",
+    "dev:backend": "npm run dev --prefix backend",
+    "dev:frontend": "npm run dev --prefix frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "wait-on": "^7.2.0"
+  },
+  "dependencies": {
+    "mongodb": "^7.0.0"
+  }
+}
